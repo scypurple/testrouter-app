@@ -17,21 +17,20 @@ export default class Home extends Component {
 							<MyNavLink to="/home/message">Message</MyNavLink>
 						</li>
 					</ul>
-          {/* <Switch>
-            <Route path='home/news' component={News} />
-            <Route path='home/message' component={Message} />
-          </Switch> */}
-          <div className="col-xs-6">
+          <Switch>
+            <Route path='/home/news' component={News} />
+            <Route path='/home/message' component={Message} />
+          </Switch>
+          {/* <div className="col-xs-6">
                         <div className="panel">
                             <div className="panel-body">
-                                {/* 展示区要根据路径去决定展示哪个组件----注册路由 */}
                                 <Switch>
                                     <Route path='/home/news' component={News} />
                                     <Route path='/home/message' component={Message} />
                                 </Switch>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
       </div>
     )
   }
