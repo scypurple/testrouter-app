@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import MyNavLink from '../../components/MyNavLink'
 import News from './News'
 import Message from './Message'
@@ -20,6 +20,7 @@ export default class Home extends Component {
           <Switch>
             <Route path='/home/news' component={News} />
             <Route path='/home/message' component={Message} />
+            <Redirect to='/home/news'/>
           </Switch>
           {/* <div className="col-xs-6">
                         <div className="panel">
