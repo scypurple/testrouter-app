@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class News extends Component {
   render() {
     return (
-      <div>this is no news</div>
+      <div>there is no news</div>
     )
   }
 }
