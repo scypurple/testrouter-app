@@ -9,7 +9,7 @@ export default class Detail extends Component {
     render() {
         //console.log(this.props)
         const {id, title} = this.props.match.params;
-        const content = data.find(e => e.id === id).content;
+        const {content} = data.find(e => e.id === id);
         return (
             <ul>
                 <li>id:{id}</li>
