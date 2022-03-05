@@ -1,10 +1,11 @@
 import React from 'react'
-import {Navigate, Route, Routes} from 'react-router-dom'
+import {useRoutes} from 'react-router-dom'
 import MyNavLink from './components/MyNavLink'
-import About from './pages/About'
-import Home from './pages/Home'
+import routes from './routes'
 
 export default function App() {
+
+    const element = useRoutes(routes);
         return (
             <div>
                 <div className="row">
@@ -29,12 +30,7 @@ export default function App() {
                         <div className="panel">
                             <div className="panel-body">
                                 {/* 展示区要根据路径去决定展示哪个组件----注册路由 */}
-                               <Routes>
-                                    <Route path='/about' element={<About/>} />
-                                    <Route path='/home' element={<Home/>} />
-                                    <Route path='/' element={<Navigate to='/about' />} />
-                                    {/* <Redirect to='/about' /> */}
-                                </Routes>
+                            {element} 
                             </div>
                         </div>
                     </div>
