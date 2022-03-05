@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import React from 'react'
+import {Route, Routes} from 'react-router-dom'
 import MyNavLink from './components/MyNavLink'
 import About from './pages/About'
 import Home from './pages/Home'
 
-export default class App extends Component {
-    render() {
+export default function App() {
         return (
             <div>
                 <div className="row">
@@ -30,11 +29,11 @@ export default class App extends Component {
                         <div className="panel">
                             <div className="panel-body">
                                 {/* 展示区要根据路径去决定展示哪个组件----注册路由 */}
-                                <Switch>
-                                    <Route path='/about' component={About} />
-                                    <Route path='/home' component={Home} />
-                                    <Redirect to='/about' />
-                                </Switch>
+                               <Routes>
+                                    <Route path='/about' element={About} />
+                                    <Route path='/home' element={Home} />
+                                    {/* <Redirect to='/about' /> */}
+                                </Routes>
                             </div>
                         </div>
                     </div>
@@ -42,4 +41,4 @@ export default class App extends Component {
             </div>
         )
     }
-}
+

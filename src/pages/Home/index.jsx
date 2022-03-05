@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import React from 'react'
+import {Route, Routes} from 'react-router-dom'
 import MyNavLink from '../../components/MyNavLink'
 import News from './News'
 import Message from './Message'
 
-export default class Home extends Component {
-  render() {
+export default function Home() {
     return (
       <div>
         <h1>Home 展示区</h1>
@@ -17,11 +16,11 @@ export default class Home extends Component {
 							<MyNavLink to="/home/message">Message</MyNavLink>
 						</li>
 					</ul>
-          <Switch>
-            <Route path='/home/news' component={News} />
-            <Route path='/home/message' component={Message} />
-            <Redirect to='/home/news'/>
-          </Switch>
+          <Routes>
+            <Route path='/home/news' element={News} />
+            <Route path='/home/message' element={Message} />
+            {/* <Redirect to='/home/news'/> */}
+          </Routes>
           {/* <div className="col-xs-6">
                         <div className="panel">
                             <div className="panel-body">
@@ -35,4 +34,4 @@ export default class Home extends Component {
       </div>
     )
   }
-}
+
