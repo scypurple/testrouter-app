@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Routes} from 'react-router-dom'
+import {Navigate, Route, Routes} from 'react-router-dom'
 import MyNavLink from '../../components/MyNavLink'
 import News from './News'
 import Message from './Message'
@@ -10,15 +10,16 @@ export default function Home() {
         <h1>Home 展示区</h1>
         <ul className="nav nav-tabs">
 						<li>
-							<MyNavLink to="/home/news">News</MyNavLink>
+							<MyNavLink to="/news">News</MyNavLink>
 						</li>
 						<li>
-							<MyNavLink to="/home/message">Message</MyNavLink>
+							<MyNavLink to="/message">Message</MyNavLink>
 						</li>
 					</ul>
           <Routes>
-            <Route path='/home/news' element={News} />
-            <Route path='/home/message' element={Message} />
+            <Route path='/news' element={<News/>} />
+            <Route path='/message' element={<Message/>} />
+            <Route path='/' element={<Navigate to='/news' />} />
             {/* <Redirect to='/home/news'/> */}
           </Routes>
           {/* <div className="col-xs-6">

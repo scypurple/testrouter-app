@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Routes} from 'react-router-dom'
+import {Navigate, Route, Routes} from 'react-router-dom'
 import MyNavLink from './components/MyNavLink'
 import About from './pages/About'
 import Home from './pages/Home'
@@ -30,8 +30,9 @@ export default function App() {
                             <div className="panel-body">
                                 {/* 展示区要根据路径去决定展示哪个组件----注册路由 */}
                                <Routes>
-                                    <Route path='/about' element={About} />
-                                    <Route path='/home' element={Home} />
+                                    <Route path='/about' element={<About/>} />
+                                    <Route path='/home' element={<Home/>} />
+                                    <Route path='/' element={<Navigate to='/about' />} />
                                     {/* <Redirect to='/about' /> */}
                                 </Routes>
                             </div>
